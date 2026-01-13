@@ -4437,6 +4437,298 @@
           },
           "htmlContent": "",
           "markdownContent": ""
+        },
+        {
+          "id": "Panel_SC006",
+          "type": "h-bar",
+          "title": "Consumer Lag (Messages)",
+          "description": "Consumer lag per consumer - number of messages behind the stream. 0 = caught up.",
+          "config": {
+            "show_legends": false,
+            "legends_position": "bottom",
+            "unit": "short",
+            "decimals": 0,
+            "top_results_others": false,
+            "axis_border_show": true,
+            "legend_width": {
+              "unit": "px"
+            },
+            "base_map": {
+              "type": "osm"
+            },
+            "map_view": {
+              "zoom": 1,
+              "lat": 0,
+              "lng": 0
+            },
+            "map_symbol_style": {
+              "size": "by Value",
+              "size_by_value": {
+                "min": 1,
+                "max": 100
+              },
+              "size_fixed": 2
+            },
+            "drilldown": [],
+            "mark_line": [],
+            "connect_nulls": false,
+            "no_value_replacement": "",
+            "wrap_table_cells": false,
+            "table_transpose": false,
+            "table_dynamic_columns": false
+          },
+          "queryType": "promql",
+          "queries": [
+            {
+              "query": "jetstream_consumer_lag{server_id=~\"$server_id\"}",
+              "vrlFunctionQuery": "",
+              "customQuery": true,
+              "fields": {
+                "stream": "jetstream_consumer_lag",
+                "stream_type": "metrics",
+                "x": [],
+                "y": [],
+                "z": [],
+                "breakdown": [],
+                "filter": {
+                  "filterType": "group",
+                  "logicalOperator": "AND",
+                  "conditions": []
+                }
+              },
+              "config": {
+                "promql_legend": "{stream_name}/{consumer_name}"
+              }
+            }
+          ],
+          "layout": {
+            "x": 0,
+            "y": 24,
+            "w": 24,
+            "h": 12,
+            "i": 6
+          },
+          "htmlContent": "",
+          "markdownContent": ""
+        },
+        {
+          "id": "Panel_SC007",
+          "type": "h-bar",
+          "title": "Consumer Idle Time (Seconds)",
+          "description": "Seconds since last consumer activity. Lower is better - shows consumers are actively processing.",
+          "config": {
+            "show_legends": false,
+            "legends_position": "bottom",
+            "unit": "s",
+            "decimals": 1,
+            "top_results_others": false,
+            "axis_border_show": true,
+            "legend_width": {
+              "unit": "px"
+            },
+            "base_map": {
+              "type": "osm"
+            },
+            "map_view": {
+              "zoom": 1,
+              "lat": 0,
+              "lng": 0
+            },
+            "map_symbol_style": {
+              "size": "by Value",
+              "size_by_value": {
+                "min": 1,
+                "max": 100
+              },
+              "size_fixed": 2
+            },
+            "drilldown": [],
+            "mark_line": [],
+            "connect_nulls": false,
+            "no_value_replacement": "",
+            "wrap_table_cells": false,
+            "table_transpose": false,
+            "table_dynamic_columns": false
+          },
+          "queryType": "promql",
+          "queries": [
+            {
+              "query": "jetstream_consumer_idle_seconds{server_id=~\"$server_id\"}",
+              "vrlFunctionQuery": "",
+              "customQuery": true,
+              "fields": {
+                "stream": "jetstream_consumer_idle_seconds",
+                "stream_type": "metrics",
+                "x": [],
+                "y": [],
+                "z": [],
+                "breakdown": [],
+                "filter": {
+                  "filterType": "group",
+                  "logicalOperator": "AND",
+                  "conditions": []
+                }
+              },
+              "config": {
+                "promql_legend": "{stream_name}/{consumer_name}"
+              }
+            }
+          ],
+          "layout": {
+            "x": 24,
+            "y": 24,
+            "w": 24,
+            "h": 12,
+            "i": 7
+          },
+          "htmlContent": "",
+          "markdownContent": ""
+        },
+        {
+          "id": "Panel_SC008",
+          "type": "line",
+          "title": "Consumer Lag Over Time",
+          "description": "Track consumer lag trends - spikes indicate consumers falling behind.",
+          "config": {
+            "show_legends": true,
+            "legends_position": "bottom",
+            "unit": "short",
+            "decimals": 0,
+            "top_results_others": false,
+            "axis_border_show": true,
+            "legend_width": {
+              "unit": "px"
+            },
+            "base_map": {
+              "type": "osm"
+            },
+            "map_view": {
+              "zoom": 1,
+              "lat": 0,
+              "lng": 0
+            },
+            "map_symbol_style": {
+              "size": "by Value",
+              "size_by_value": {
+                "min": 1,
+                "max": 100
+              },
+              "size_fixed": 2
+            },
+            "drilldown": [],
+            "mark_line": [],
+            "connect_nulls": false,
+            "no_value_replacement": "",
+            "wrap_table_cells": false,
+            "table_transpose": false,
+            "table_dynamic_columns": false
+          },
+          "queryType": "promql",
+          "queries": [
+            {
+              "query": "jetstream_consumer_lag{server_id=~\"$server_id\"}",
+              "vrlFunctionQuery": "",
+              "customQuery": true,
+              "fields": {
+                "stream": "jetstream_consumer_lag",
+                "stream_type": "metrics",
+                "x": [],
+                "y": [],
+                "z": [],
+                "breakdown": [],
+                "filter": {
+                  "filterType": "group",
+                  "logicalOperator": "AND",
+                  "conditions": []
+                }
+              },
+              "config": {
+                "promql_legend": "{stream_name} - {consumer_name}"
+              }
+            }
+          ],
+          "layout": {
+            "x": 0,
+            "y": 36,
+            "w": 24,
+            "h": 10,
+            "i": 8
+          },
+          "htmlContent": "",
+          "markdownContent": ""
+        },
+        {
+          "id": "Panel_SC009",
+          "type": "line",
+          "title": "Consumer Idle Time Over Time",
+          "description": "Track consumer activity - spikes indicate periods of inactivity.",
+          "config": {
+            "show_legends": true,
+            "legends_position": "bottom",
+            "unit": "s",
+            "decimals": 1,
+            "top_results_others": false,
+            "axis_border_show": true,
+            "legend_width": {
+              "unit": "px"
+            },
+            "base_map": {
+              "type": "osm"
+            },
+            "map_view": {
+              "zoom": 1,
+              "lat": 0,
+              "lng": 0
+            },
+            "map_symbol_style": {
+              "size": "by Value",
+              "size_by_value": {
+                "min": 1,
+                "max": 100
+              },
+              "size_fixed": 2
+            },
+            "drilldown": [],
+            "mark_line": [],
+            "connect_nulls": false,
+            "no_value_replacement": "",
+            "wrap_table_cells": false,
+            "table_transpose": false,
+            "table_dynamic_columns": false
+          },
+          "queryType": "promql",
+          "queries": [
+            {
+              "query": "jetstream_consumer_idle_seconds{server_id=~\"$server_id\"}",
+              "vrlFunctionQuery": "",
+              "customQuery": true,
+              "fields": {
+                "stream": "jetstream_consumer_idle_seconds",
+                "stream_type": "metrics",
+                "x": [],
+                "y": [],
+                "z": [],
+                "breakdown": [],
+                "filter": {
+                  "filterType": "group",
+                  "logicalOperator": "AND",
+                  "conditions": []
+                }
+              },
+              "config": {
+                "promql_legend": "{stream_name} - {consumer_name}"
+              }
+            }
+          ],
+          "layout": {
+            "x": 24,
+            "y": 36,
+            "w": 24,
+            "h": 10,
+            "i": 9
+          },
+          "htmlContent": "",
+          "markdownContent": ""
         }
       ]
     }
