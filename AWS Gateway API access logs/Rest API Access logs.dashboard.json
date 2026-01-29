@@ -56,7 +56,7 @@
               "vrlFunctionQuery": "",
               "customQuery": false,
               "fields": {
-                "stream": "default",
+                "stream": "apigateway-logs-stream",
                 "stream_type": "logs",
                 "x": [
                   {
@@ -151,7 +151,7 @@
               "vrlFunctionQuery": "",
               "customQuery": false,
               "fields": {
-                "stream": "default",
+                "stream": "apigateway-logs-stream",
                 "stream_type": "logs",
                 "x": [
                   {
@@ -246,7 +246,7 @@
               "vrlFunctionQuery": "",
               "customQuery": false,
               "fields": {
-                "stream": "default",
+                "stream": "apigateway-logs-stream",
                 "stream_type": "logs",
                 "x": [
                   {
@@ -388,7 +388,7 @@
               "vrlFunctionQuery": "",
               "customQuery": false,
               "fields": {
-                "stream": "default",
+                "stream": "apigateway-logs-stream",
                 "stream_type": "logs",
                 "x": [
                   {
